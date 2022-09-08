@@ -3,9 +3,10 @@ public class Employee {
     private static int nextid=0;
     private String name;
 
-    public Employee(String name) {
+    public Employee(String name) throws FieldLengthLimitException {
         this.id=nextid++;
-        this.name = name;
+        if(name.length()>15){throw new FieldLengthLimitException("Too much sumbols in name!");}
+        else{this.name = name;}
     }
     void PrintEmpoyee(){
         System.out.println("ID:"+id+" Name"+name);
