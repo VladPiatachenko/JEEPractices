@@ -5,8 +5,8 @@ public class Employee {
 
     public Employee(String name) throws FieldLengthLimitException {
         this.id=nextid++;
-        if(name.length()>15){throw new FieldLengthLimitException("Too much sumbols in name!");}
-        else{this.name = name;}
+        if(name.length()>15){throw new FieldLengthLimitException("Name must be less then 15 sumbols");}
+       else{this.name = name;}
     }
     void PrintEmpoyee(){
         System.out.println("ID:"+id+" Name"+name);
